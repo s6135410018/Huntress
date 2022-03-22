@@ -7,6 +7,7 @@ public class arrow : MonoBehaviour
     float speed = 3.0f;
     float startTime;
     float secondDestroy = 2.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,4 +23,6 @@ public class arrow : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    
+    
 }

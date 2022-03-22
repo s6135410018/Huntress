@@ -6,6 +6,7 @@ public class shooting : MonoBehaviour
 {
     [SerializeField] GameObject arrow;
     [SerializeField] GameObject hitArea;
+    public System.Action<int> action;
     float nextFire = 0.0f;
     float fireRate = 1.0f;
     GameObject player;
@@ -26,6 +27,7 @@ public class shooting : MonoBehaviour
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
+            action?.Invoke(0);
             StartCoroutine(createArrow());
             animator.SetBool("Attack", true);
         }
